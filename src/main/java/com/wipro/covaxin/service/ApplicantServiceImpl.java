@@ -56,7 +56,7 @@ public class ApplicantServiceImpl implements ApplicantService {
         File outputFile = new File(targetDirPath);
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         writer.writeValue(outputFile, applicantRepo.findAll());
-        return ResponseEntity.accepted().body("All registered applicants' details are written to a file on Desktop named CovaxinApplicantsMO20170519");
+        return ResponseEntity.ok().body("All registered applicants' details are written to a file on Desktop named CovaxinApplicantsMO20170519");
     }
 
     @Override
@@ -97,7 +97,7 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicant.setApplicantId(thisApplicant.getApplicantId());
         applicant.setAadharDetails(thisApplicant.getAadharDetails());
         applicantRepo.save(applicant);
-        return ResponseEntity.accepted().body("Update Successful");
+        return ResponseEntity.ok().body("Update Successful");
     }
 
     @Override
@@ -108,7 +108,7 @@ public class ApplicantServiceImpl implements ApplicantService {
         aadharDetailsRepo.deleteById(applicantRepo.findById(id).get().getAadharDetails().getAadharId());
         applicantRepo.deleteById(id);
 
-        return ResponseEntity.accepted().body("Delete Successful");
+        return ResponseEntity.ok().body("Delete Successful");
     }
 
     @Override

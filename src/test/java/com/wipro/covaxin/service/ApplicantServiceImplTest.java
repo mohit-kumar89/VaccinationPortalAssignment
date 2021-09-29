@@ -132,7 +132,7 @@ class ApplicantServiceImplTest {
         Applicant temp = new Applicant("John Doe", Date.from(OffsetDateTime.parse("2020-06-20T13:28:06.419Z").toInstant()), null);
         Mockito.when(applicantRepo.existsById(Mockito.anyLong())).thenReturn(true);
         Mockito.when(applicantRepo.findById(Mockito.anyLong())).thenReturn(Optional.ofNullable(testApplicant));
-        ResponseEntity<Object> expected = ResponseEntity.accepted().body("Update Successful");
+        ResponseEntity<Object> expected = ResponseEntity.ok().body("Update Successful");
         assertEquals(expected, service.updateApplicant(temp, id));
     }
 
@@ -162,7 +162,7 @@ class ApplicantServiceImplTest {
     void removeApplicant() throws ResourceNotFoundException {
         Mockito.when(applicantRepo.existsById(Mockito.anyLong())).thenReturn(true);
         Mockito.when(applicantRepo.findById(Mockito.anyLong())).thenReturn(Optional.ofNullable(testApplicant));
-        ResponseEntity<Object> expected = ResponseEntity.accepted().body("Delete Successful");
+        ResponseEntity<Object> expected = ResponseEntity.ok().body("Delete Successful");
         assertEquals(expected, service.removeApplicant(Mockito.anyLong()));
     }
 
