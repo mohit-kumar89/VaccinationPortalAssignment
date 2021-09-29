@@ -1,0 +1,10 @@
+{
+    "applicantName": "John",
+    "vaccinationTimeSlot": "2021-12-20T13:28:06.419Z",
+    "aadharDetails": {
+	"aadharId": 1234,
+        "name": "John",
+        "dob": "1961-06-03T13:28:06.419Z",
+        "gender": "Male"
+    }
+}
