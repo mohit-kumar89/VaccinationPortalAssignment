@@ -21,6 +21,7 @@ public class RestController {
 //    In this application applicants can be registered for vaccination, view all registered applications, view an application by id, delete an application, update details (exluding aadhar details), create applicant/(s) from json file and write registered applicant's details to desktop
 //    For registrations several conditions have to be fulfilled: age must be more than 45 years, vaccination time slot can not be past today, aadhar id has to be unique, while updating aadhar details can not be updated.
 //    The postman collection, single applicant json and multiple applicant json files are in the data folder in resources.
+//    Swagger url - http://localhost:8080/swagger-ui.html
 
     @GetMapping("/applicants")
     private List<Applicant> getAllApplicants() throws ResourceNotFoundException {
